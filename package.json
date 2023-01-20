@@ -4,6 +4,7 @@
   "description": "A little app that keeps track of the books you want to read and the ones you've finished.",
   "main": "webpack.config.js",
   "scripts": {
+    "server-start": "npx nodemon --watch server/index.js",
     "dev": "webpack server",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,13 +13,18 @@
     "type": "git",
     "url": "git+https://github.com/GriffLynn/Booktracker.git"
   },
-  "author": "Lynn",
+  "author": "Glyph",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GriffLynn/Booktracker.gitissues"
   },
   "homepage": "https://github.com/GriffLynn/Booktracker.git#readme",
   "dependencies": {
+    "axios": "^1.2.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node": "^19.4.0",
+    "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
