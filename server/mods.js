@@ -17,7 +17,8 @@ module.exports = {
     `INSERT INTO
       books
       (title,
-      note)
+      note,
+      read)
     VALUES
       ($1,
       $2,
@@ -28,21 +29,21 @@ module.exports = {
     return db.pool.query(query, data);
   },
 
-  postRead: (req) => {
-    console.log("models.postRead success!");
-    const { title, note, read } = req;
+  putRead: (req, res) => {
+    console.log("models.putRead success!");
+
+    const id = req;
+    console.log("mods id:", id);
 
     let query =
     `UPDATE
       books
     SET
-      read = ${read}
+      read = 'yes'
     WHERE
-      title = ${title}`;
+      id = ${id}`;
 
-    const data = [ title, note, data ];
-
-    return db.pool.query(query, data);
+    return db.pool.query(query);
   }
 
 

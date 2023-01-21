@@ -17,7 +17,8 @@ module.exports = {
   },
 
   putRead: (req, res) => {
-    mods.postRead(req.params).then((data) => {
+    console.log("id:", req.params);
+    mods.putRead(req.params.id).then((data) => {
       res.status(204).end();
     });
   }
