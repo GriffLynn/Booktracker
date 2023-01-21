@@ -17,8 +17,13 @@ module.exports = {
   },
 
   putRead: (req, res) => {
-    console.log("id:", req.params);
-    mods.putRead(req.params.id).then((data) => {
+    mods.putRead(req).then((data) => {
+      res.status(204).end();
+    });
+  },
+
+  putNote: (req, res) => {
+    mods.putNote(req).then((data) => {
       res.status(204).end();
     });
   }

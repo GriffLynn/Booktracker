@@ -32,18 +32,35 @@ module.exports = {
   putRead: (req, res) => {
     console.log("models.putRead success!");
 
-    const id = req;
-    console.log("mods id:", id);
+    const id = req.params.id;
+    const read = req.body.read;
 
     let query =
     `UPDATE
       books
     SET
-      read = 'yes'
+      read = '${read}'
     WHERE
       id = ${id}`;
 
     return db.pool.query(query);
+  },
+
+  putNote: (req, res) => {
+   console.log("models.putNote success!");
+
+   const id = req.params.id;
+   const note = req.body.note;
+
+   let query =
+   `UPDATE
+     books
+   SET
+     note = '${note}'
+   WHERE
+     id = ${id}`;
+
+  return db.pool.query(query);
   }
 
 

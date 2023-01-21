@@ -3,6 +3,7 @@ const controllers = require('./controllers.js');
 
 router.get('/books', controllers.getAll);
 router.post('/books', controllers.postBook);
-router.put('/books/:id', controllers.putRead);
+router.put('/books/:id/read', controllers.putRead);
+router.put('/books/:id/note', controllers.putNote);
 
 module.exports = router;
