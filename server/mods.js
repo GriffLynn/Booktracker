@@ -46,16 +46,18 @@ module.exports = {
     return db.pool.query(query);
   },
 
-  putNote: (req, res) => {
-    console.log("models.putNote success!");
+  putDetails: (req, res) => {
+    console.log("models.putDetails success!");
 
     const id = req.params.id;
     const note = req.body.note;
+    const title = req.body.title;
 
     let query =
     `UPDATE
       books
     SET
+      title = ${title},
       note = '${note}'
     WHERE
       id = ${id}`;
