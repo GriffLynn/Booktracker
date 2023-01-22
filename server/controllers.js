@@ -26,5 +26,11 @@ module.exports = {
     mods.putNote(req).then((data) => {
       res.status(204).end();
     });
-  }
+  },
+
+  deleteBook: (req, res) => {
+    mods.deleteBook(req).then((data) => {
+      res.status(200).end();
+    });
+  },
 }
