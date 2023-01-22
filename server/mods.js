@@ -47,20 +47,35 @@ module.exports = {
   },
 
   putNote: (req, res) => {
-   console.log("models.putNote success!");
+    console.log("models.putNote success!");
 
-   const id = req.params.id;
-   const note = req.body.note;
+    const id = req.params.id;
+    const note = req.body.note;
 
-   let query =
-   `UPDATE
-     books
-   SET
-     note = '${note}'
-   WHERE
-     id = ${id}`;
+    let query =
+    `UPDATE
+      books
+    SET
+      note = '${note}'
+    WHERE
+      id = ${id}`;
 
-  return db.pool.query(query);
+    return db.pool.query(query);
+  },
+
+  deleteBook: (req, res) => {
+    console.log("models.deleteBook success!");
+
+    const id = req.params.id;
+
+    let query =
+    `DELETE
+     FROM
+       books
+     WHERE
+       id = ${id}`;
+
+    return db.pool.query(query);
   }
 
 
