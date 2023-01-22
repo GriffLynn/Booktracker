@@ -22,8 +22,8 @@ module.exports = {
     });
   },
 
-  putNote: (req, res) => {
-    mods.putNote(req).then((data) => {
+  putDetails: (req, res) => {
+    mods.putDetails(req).then((data) => {
       res.status(204).end();
     });
   },
